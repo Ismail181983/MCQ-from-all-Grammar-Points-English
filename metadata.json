@@ -1,0 +1,6 @@
+{
+  "name": "MCQ from all Grammar Points",
+  "description": "Interactive English Grammar Model Question practice platform with animated aquarium login, speech synthesis read-aloud, customizable timers, answer review with explanations, and persistent scoreboard by Md. Ismail Hossain.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
