@@ -60,21 +60,32 @@ This project is configured out-of-the-box for **GitHub Pages** deployment with r
 
 2. **Enable GitHub Pages**:
    - Go to your repository on GitHub.
-   - Navigate to **Settings** > **Pages**.
-   - Under **Build and deployment** > **Source**, select **GitHub Actions**.
+   - Navigate to **Settings** > **Pages** (under the "Code and automation" section).
+   - Under **Build and deployment** > **Source**, change it from `Deploy from a branch` to **GitHub Actions**.
+   *(⚠️ Important: Do NOT choose `main` branch under "Deploy from a branch", because `main` contains raw React `.tsx` source code. Selecting **GitHub Actions** automatically runs the build and deploys the compiled JavaScript/CSS).*
 
-3. **That's it!** The included workflow (`.github/workflows/deploy.yml`) will automatically build and publish your site at:
+3. **Check Workflow Permissions (If needed)**:
+   - In your repo, go to **Settings** > **Actions** > **General**.
+   - Under **Workflow permissions**, choose **Read and write permissions**.
+   - Click **Save**.
+
+4. **Trigger Deployment**:
+   - Go to the **Actions** tab in your repository.
+   - Click on **Deploy to GitHub Pages** in the left sidebar.
+   - Click **Run workflow** > **Run workflow** (or simply make any commit).
+   - Once the green checkmark appears, your site is live at:
    ```
    https://<YOUR-USERNAME>.github.io/<YOUR-REPOSITORY-NAME>/
    ```
 
 ### Alternative: 1-Click Terminal Deploy via `gh-pages`
 
-You can also deploy directly from your local terminal with one command:
+If you prefer using branch deployment (`Deploy from a branch` -> `gh-pages`):
 ```bash
 npm run deploy
 ```
-*(This automatically runs `npm run build` and publishes the compiled `dist/` directory to your `gh-pages` branch).*
+*(This builds the project and pushes the compiled `dist/` directory to the `gh-pages` branch on GitHub).*
+
 
 ---
 
